@@ -1,0 +1,17 @@
+import { TransactionAbstract } from 'src/domain/model-abstracts/transaction.abstract';
+import { TransferAbstract } from '../../../domain/model-abstracts/transfer.abstract';
+import { UUID } from 'crypto';
+import { PrimaryColumn, Entity, OneToOne } from 'typeorm';
+import { TransactionEntity } from './transaction.entity';
+
+@Entity({ name: 'transferences' })
+export class TransferEntity extends TransferAbstract {
+  @PrimaryColumn()
+  id: UUID;
+
+  @OneToOne(() => TransactionEntity)
+  transactionWithdrown: TransactionAbstract;
+
+  @OneToOne(() => TransactionEntity)
+  transactionBenefited: TransactionAbstract;
+}
