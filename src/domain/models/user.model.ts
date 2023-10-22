@@ -1,6 +1,8 @@
-import { AggregateRoot } from '../../../kangaroo-kernel/src/core/aggregateRoot';
+import { UUID } from 'crypto';
+import { UserAbstract } from '../model-abstracts/user.abstract';
 
-export class User extends AggregateRoot {
+export class User extends UserAbstract {
+  id: UUID;
   name: string;
   email: string;
   password: string;
@@ -13,6 +15,7 @@ export class User extends AggregateRoot {
     dateOfBirth: Date,
   ) {
     super();
+    this.id = crypto.randomUUID();
     this.name = name;
     this.email = email;
     this.password = password;

@@ -1,7 +1,3 @@
 import { Entity } from './entity';
 
-export abstract class AggregateRoot extends Entity {
-  constructor() {
-    super();
-  }
-}
+export abstract class AggregateRoot extends Entity {}

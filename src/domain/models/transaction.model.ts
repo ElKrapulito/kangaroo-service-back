@@ -1,21 +1,23 @@
 import { UUID } from 'crypto';
-import { AggregateRoot } from '../../../kangaroo-kernel/src/core/aggregateRoot';
-import { Account } from './account.model';
-export class Transaction extends AggregateRoot {
+import { TransactionAbstract } from '../model-abstracts/transaction.abstract';
+import { AccountAbstract } from '../model-abstracts/account.abstract';
+export class Transaction extends TransactionAbstract {
+  id: UUID;
   amount: number;
-  account: UUID | Account;
+  account: UUID | AccountAbstract;
   date: Date;
   type: string;
   category: string;
 
   constructor(
     amount: number,
-    account: UUID | Account,
+    account: UUID | AccountAbstract,
     date: Date,
     type: string,
     category: string,
   ) {
     super();
+    this.id = crypto.randomUUID();
     this.amount = amount;
     this.account = account;
     this.date = date;

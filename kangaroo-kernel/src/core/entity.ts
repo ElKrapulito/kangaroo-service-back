@@ -4,7 +4,7 @@ import { IBusinessRule } from './iBusinessRule';
 import { BusinessRuleValidationException } from './businessRuleValidationException';
 
 export abstract class Entity {
-  public id: UUID;
+  abstract id: UUID;
   private readonly _domainEvents: DomainEvent[];
 
   public get domainEvents(): DomainEvent[] {
@@ -12,7 +12,6 @@ export abstract class Entity {
   }
 
   protected constructor() {
-    this.id = crypto.randomUUID();
     this._domainEvents = [];
   }
 

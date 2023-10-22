@@ -1,13 +1,15 @@
 import { UUID } from 'crypto';
-import { AggregateRoot } from '../../../kangaroo-kernel/src/core/aggregateRoot';
-import { User } from './user.model';
-export class Account extends AggregateRoot {
+import { AccountAbstract } from '../model-abstracts/account.abstract';
+import { UserAbstract } from '../model-abstracts/user.abstract';
+export class Account extends AccountAbstract {
+  id: UUID;
   name: string;
-  user: UUID | User;
+  user: UUID | UserAbstract;
   amount: number;
 
-  constructor(name: string, user: UUID | User, amount: number) {
+  constructor(name: string, user: UUID | UserAbstract, amount: number) {
     super();
+    this.id = crypto.randomUUID();
     this.name = name;
     this.user = user;
     this.amount = amount;
