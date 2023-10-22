@@ -1,6 +1,6 @@
-import { Entity } from 'kangaroo-kernel/src/core/entity';
 import { User } from './user.model';
 import { UUID } from 'crypto';
+import { Entity } from '../../../kangaroo-kernel/src/core/entity';
 
 export class Category extends Entity {
   name: string;
