@@ -12,6 +12,7 @@ export abstract class Entity {
   }
 
   protected constructor() {
+    this.id = crypto.randomUUID();
     this._domainEvents = [];
   }
 
