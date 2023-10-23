@@ -13,7 +13,7 @@ export class UserController {
   ) {}
 
   @Post('new')
-  async registerUser(@Body() user: Partial<UserDto>) {
+  async registerUser(@Body() user: UserDto) {
     return await this.commandBus.execute(new RegisterUserCommand(user));
   }
 

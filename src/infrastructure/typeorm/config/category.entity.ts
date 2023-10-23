@@ -12,9 +12,6 @@ export class CategoryEntity extends CategoryAbstract {
   @Column()
   name: string;
 
-  @Column()
-  amount: number;
-
   @ManyToOne(() => UserEntity, { nullable: true })
   user: UserAbstract;
 }

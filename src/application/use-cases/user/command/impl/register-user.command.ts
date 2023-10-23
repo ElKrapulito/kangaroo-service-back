@@ -1,4 +1,4 @@
-import { UserAbstract } from '../../../../../domain/model-abstracts/user.abstract';
+import { UserDto } from '../../../../dto/user.dto';
 export class RegisterUserCommand {
-  constructor(public readonly user: Partial<UserAbstract>) {}
+  constructor(public readonly user: UserDto) {}
 }

@@ -7,10 +7,13 @@ import { ICategoryRepository } from '../../../domain/repositories/icategory.repo
 import { CategoryRepository } from './category.repository';
 import { ITransactionRepository } from '../../../domain/repositories/itransaction.repository';
 import { TransactionRepository } from './transaction.repository';
+import { ITransferRepository } from '../../../domain/repositories/itransfer.repository';
+import { TransferRepository } from './transfer.repository';
 
 export const RepositoriesProvider: Provider[] = [
   { provide: IUserRepository, useClass: UserRepository },
   { provide: IAccountRepository, useClass: AccountRepository },
   { provide: ICategoryRepository, useClass: CategoryRepository },
   { provide: ITransactionRepository, useClass: TransactionRepository },
+  { provide: ITransferRepository, useClass: TransferRepository },
 ];

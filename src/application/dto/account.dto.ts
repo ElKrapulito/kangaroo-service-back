@@ -1,9 +1,6 @@
-import { UserAbstract } from 'src/domain/model-abstracts/user.abstract';
-import { AccountAbstract } from '../../domain/model-abstracts/account.abstract';
 import { UUID } from 'crypto';
-export class AccountDto extends AccountAbstract {
+export class AccountDto {
   name: string;
-  user: UserAbstract | UUID;
+  user: UUID;
   amount: number;
-  id: UUID;
 }

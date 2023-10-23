@@ -6,12 +6,10 @@ export class Category extends CategoryAbstract {
   id: UUID;
   name: string;
   user: UserAbstract | UUID | undefined;
-  amount: number;
-  constructor(name: string, amount: number, user?: UserAbstract | UUID) {
+  constructor(name: string, user?: UserAbstract | UUID) {
     super();
     this.id = randomUUID();
     this.name = name;
-    this.amount = amount;
     this.user = user;
   }
 }

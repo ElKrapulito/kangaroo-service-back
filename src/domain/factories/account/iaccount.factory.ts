@@ -1,9 +1,13 @@
 import { UUID } from 'crypto';
 import { Account } from '../../models/account.model';
-import { User } from '../../models/user.model';
+import { UserAbstract } from '../../model-abstracts/user.abstract';
 
 export interface IAccountFactory {
-  createAccount(name: string, user: UUID | User, amount: number): Account;
+  createAccount(
+    name: string,
+    user: UUID | UserAbstract,
+    amount: number,
+  ): Account;
 }
 
 export const IAccountFactory = Symbol('IAccountFactory');

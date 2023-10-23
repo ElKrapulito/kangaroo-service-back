@@ -3,12 +3,12 @@ import { TransferAbstract } from '../model-abstracts/transfer.abstract';
 import { TransactionAbstract } from '../model-abstracts/transaction.abstract';
 export class Transfer extends TransferAbstract {
   id: UUID;
-  transactionWithdrown: TransactionAbstract;
-  transactionBenefited: TransactionAbstract;
+  transactionWithdrown: TransactionAbstract | UUID;
+  transactionBenefited: TransactionAbstract | UUID;
 
   constructor(
-    transactionWithdrown: TransactionAbstract,
-    transactionBenefited: TransactionAbstract,
+    transactionWithdrown: TransactionAbstract | UUID,
+    transactionBenefited: TransactionAbstract | UUID,
   ) {
     super();
     this.id = randomUUID();

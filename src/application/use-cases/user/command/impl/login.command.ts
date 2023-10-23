@@ -1,4 +1,4 @@
-import { UserAbstract } from '../../../../../domain/model-abstracts/user.abstract';
+import { UserDto } from 'src/application/dto/user.dto';
 export class LoginCommand {
-  constructor(public readonly user: UserAbstract) {}
+  constructor(public readonly user: UserDto) {}
 }

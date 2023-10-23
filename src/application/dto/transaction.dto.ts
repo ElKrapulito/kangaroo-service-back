@@ -1,11 +1,8 @@
 import { UUID } from 'crypto';
-import { AccountAbstract } from 'src/domain/model-abstracts/account.abstract';
-import { TransactionAbstract } from 'src/domain/model-abstracts/transaction.abstract';
-export class TransactionDto extends TransactionAbstract {
+export class TransactionDto {
   amount: number;
-  account: UUID | AccountAbstract;
+  account: UUID;
   date: Date;
   type: string;
   category: string;
-  id: UUID;
 }
