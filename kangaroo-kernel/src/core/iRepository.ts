@@ -5,5 +5,5 @@ export interface IRepository<T extends AggregateRoot> {
   update(id: UUID, dto: Partial<T>): Promise<T>;
   findById(id: UUID): Promise<T>;
   getAll(): Promise<T[]>;
-  delete(id: UUID): Promise<T>;
+  delete(id: UUID): Promise<any>;
 }
