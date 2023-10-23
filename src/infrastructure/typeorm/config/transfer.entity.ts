@@ -9,9 +9,9 @@ export class TransferEntity extends TransferAbstract {
   @PrimaryColumn()
   id: UUID;
 
-  @OneToOne(() => TransactionEntity)
+  @OneToOne(() => TransactionEntity, { eager: true })
   transactionWithdrown: TransactionAbstract;
 
-  @OneToOne(() => TransactionEntity)
+  @OneToOne(() => TransactionEntity, { eager: true })
   transactionBenefited: TransactionAbstract;
 }

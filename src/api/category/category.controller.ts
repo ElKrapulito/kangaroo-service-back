@@ -10,7 +10,7 @@ export class CategoryController {
     private readonly queryBus: QueryBus,
   ) {}
 
-  @Post()
+  @Post('new')
   async createCategory(@Body() category: CategoryDto) {
     return await this.commandBus.execute(new CreateCategoryCommand(category));
   }
