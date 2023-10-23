@@ -1,4 +1,4 @@
-import { UUID } from 'crypto';
+import { UUID, randomUUID } from 'crypto';
 import { UserAbstract } from '../model-abstracts/user.abstract';
 
 export class User extends UserAbstract {
@@ -15,7 +15,7 @@ export class User extends UserAbstract {
     dateOfBirth: Date,
   ) {
     super();
-    this.id = crypto.randomUUID();
+    this.id = randomUUID();
     this.name = name;
     this.email = email;
     this.password = password;

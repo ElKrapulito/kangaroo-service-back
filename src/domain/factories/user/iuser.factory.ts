@@ -8,3 +8,5 @@ export interface IUserFactory {
     dateOfBirth: Date,
   ): User;
 }
+
+export const IUserFactory = Symbol('IUserFactory');

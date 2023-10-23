@@ -1,4 +1,4 @@
-import { UUID } from 'crypto';
+import { UUID, randomUUID } from 'crypto';
 import { TransferAbstract } from '../model-abstracts/transfer.abstract';
 import { TransactionAbstract } from '../model-abstracts/transaction.abstract';
 export class Transfer extends TransferAbstract {
@@ -11,7 +11,7 @@ export class Transfer extends TransferAbstract {
     transactionBenefited: TransactionAbstract,
   ) {
     super();
-    this.id = crypto.randomUUID();
+    this.id = randomUUID();
     this.transactionWithdrown = transactionWithdrown;
     this.transactionBenefited = transactionBenefited;
   }

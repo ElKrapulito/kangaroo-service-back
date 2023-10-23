@@ -3,7 +3,8 @@ import { CategoryEntity } from '../config/category.entity';
 import { BaseRepositoryTypeOrm } from './base.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-
+import { Injectable } from '@nestjs/common';
+@Injectable()
 export class CategoryRepository
   extends BaseRepositoryTypeOrm<CategoryEntity>
   implements ICategoryRepository

@@ -1,4 +1,4 @@
-import { UUID } from 'crypto';
+import { UUID, randomUUID } from 'crypto';
 import { TransactionAbstract } from '../model-abstracts/transaction.abstract';
 import { AccountAbstract } from '../model-abstracts/account.abstract';
 export class Transaction extends TransactionAbstract {
@@ -17,7 +17,7 @@ export class Transaction extends TransactionAbstract {
     category: string,
   ) {
     super();
-    this.id = crypto.randomUUID();
+    this.id = randomUUID();
     this.amount = amount;
     this.account = account;
     this.date = date;

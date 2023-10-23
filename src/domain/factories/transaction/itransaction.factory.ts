@@ -11,3 +11,5 @@ export interface ITransactionFactory {
     category: string,
   ): Transaction;
 }
+
+export const ITransactionFactory = Symbol('ITransactionFactory');

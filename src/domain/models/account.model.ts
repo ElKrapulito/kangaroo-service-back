@@ -1,4 +1,4 @@
-import { UUID } from 'crypto';
+import { UUID, randomUUID } from 'crypto';
 import { AccountAbstract } from '../model-abstracts/account.abstract';
 import { UserAbstract } from '../model-abstracts/user.abstract';
 export class Account extends AccountAbstract {
@@ -9,7 +9,7 @@ export class Account extends AccountAbstract {
 
   constructor(name: string, user: UUID | UserAbstract, amount: number) {
     super();
-    this.id = crypto.randomUUID();
+    this.id = randomUUID();
     this.name = name;
     this.user = user;
     this.amount = amount;

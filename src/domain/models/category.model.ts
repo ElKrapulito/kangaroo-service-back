@@ -1,4 +1,4 @@
-import { UUID } from 'crypto';
+import { UUID, randomUUID } from 'crypto';
 import { CategoryAbstract } from '../model-abstracts/category.abstract';
 import { UserAbstract } from '../model-abstracts/user.abstract';
 
@@ -9,7 +9,7 @@ export class Category extends CategoryAbstract {
   amount: number;
   constructor(name: string, amount: number, user?: UserAbstract | UUID) {
     super();
-    this.id = crypto.randomUUID();
+    this.id = randomUUID();
     this.name = name;
     this.amount = amount;
     this.user = user;

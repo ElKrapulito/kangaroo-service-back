@@ -2,8 +2,9 @@ import { UUID } from 'crypto';
 import { DomainEvent } from './domainEvent';
 import { IBusinessRule } from './iBusinessRule';
 import { BusinessRuleValidationException } from './businessRuleValidationException';
+import { AggregateRoot } from '@nestjs/cqrs';
 
-export abstract class Entity {
+export abstract class Entity extends AggregateRoot {
   abstract id: UUID;
   private readonly _domainEvents: DomainEvent[];
 
@@ -12,6 +13,7 @@ export abstract class Entity {
   }
 
   protected constructor() {
+    super();
     this._domainEvents = [];
   }
 
