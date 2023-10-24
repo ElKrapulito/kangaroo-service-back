@@ -4,4 +4,5 @@ export class TransferDto {
   accountWithdrown: UUID;
   accountBenefited: UUID;
   amount: number;
+  category: UUID;
 }

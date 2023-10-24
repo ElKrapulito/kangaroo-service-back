@@ -5,6 +5,7 @@ import { Inject } from '@nestjs/common';
 import { ITransferRepository } from '../../../../domain/repositories/itransfer.repository';
 import { ITransferFactory } from 'src/domain/factories/transfer/itransfer.factory';
 import { ITransactionRepository } from 'src/domain/repositories/itransaction.repository';
+import { TransactionType } from 'src/domain/enum/transaction-type.enum';
 
 @CommandHandler(CreateTransferCommand)
 export class CreateTransferHandler
@@ -27,15 +28,15 @@ export class CreateTransferHandler
       transfer.amount,
       transfer.accountBenefited,
       new Date(),
-      'Ingreso',
-      'Transferencia',
+      TransactionType.Income,
+      transfer.category,
     );
     const transactionWithdrown = this.transactionFactory.createTransaction(
       transfer.amount,
       transfer.accountWithdrown,
       new Date(),
-      'Egreso',
-      'Transferencia',
+      TransactionType.Withdrawl,
+      transfer.category,
     );
 
     const savedTransactionBenefited = this.publisher.mergeObjectContext(

@@ -5,5 +5,5 @@ export class TransactionDto {
   account: UUID;
   date: Date;
   type: TransactionType;
-  category: string;
+  category: UUID;
 }
