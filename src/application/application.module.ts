@@ -4,10 +4,11 @@ import { InfrastructureModule } from '../infrastructure/infrastructure.module';
 import { CommandHandlers } from './commands';
 import { DomainModule } from 'src/domain/domain.module';
 import { AuthModule } from '../utils/auth/auth.module';
+import { EventHandlers } from './events';
 
 @Module({
   imports: [CqrsModule, InfrastructureModule, DomainModule, AuthModule],
-  providers: [...CommandHandlers],
-  exports: [...CommandHandlers],
+  providers: [...CommandHandlers, ...EventHandlers],
+  exports: [...CommandHandlers, ...EventHandlers],
 })
 export class ApplicationModule {}

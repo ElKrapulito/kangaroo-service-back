@@ -27,6 +27,7 @@ export class RegisterUserHandler
       await this.userRepo.create(newUser),
     );
 
+    savedUser.generateCategories();
     savedUser.commit();
     return savedUser;
   }

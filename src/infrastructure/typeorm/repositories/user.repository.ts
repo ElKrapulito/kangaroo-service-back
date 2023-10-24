@@ -1,9 +1,9 @@
+import { IUserRepository } from './../../../domain/repositories/iuser.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserEntity } from '../config/user.entity';
 import { BaseRepositoryTypeOrm } from './base.repository';
 import { Repository } from 'typeorm';
 import { Injectable } from '@nestjs/common';
-import { IUserRepository } from 'src/domain/repositories/iuser.repository';
 import { UserAbstract } from '../../../domain/model-abstracts/user.abstract';
 
 @Injectable()
