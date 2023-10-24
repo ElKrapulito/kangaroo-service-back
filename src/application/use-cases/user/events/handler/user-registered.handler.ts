@@ -37,12 +37,6 @@ export class UserRegisteredHandler
       ),
     );
 
-    // newCategories.forEach(async (category) => {
-    //   this.publisher.mergeObjectContext(
-    //     await this.categoryRepository.create(category),
-    //   );
-    // });
-
     savedCategories.forEach((category) => category.commit());
   }
 }
