@@ -13,7 +13,7 @@ export class AccountController {
     private readonly queryBus: QueryBus,
   ) {}
 
-  @Post('new')
+  @Post()
   async createAccount(@Body() account: AccountDto) {
     return await this.commandBus.execute(new CreateAccountCommand(account));
   }

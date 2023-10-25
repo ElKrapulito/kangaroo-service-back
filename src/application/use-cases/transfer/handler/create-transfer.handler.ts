@@ -56,6 +56,9 @@ export class CreateTransferHandler
       await this.transferRepository.create(newTranfer),
     );
 
+    savedTransactionBenefited.updateAccountAmount();
+    savedTransactionWithdrown.updateAccountAmount();
+
     savedTransactionBenefited.commit();
     savedTransactionWithdrown.commit();
     savedTransfer.commit();

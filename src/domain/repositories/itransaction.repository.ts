@@ -5,6 +5,7 @@ import { TransactionType } from '../enum/transaction-type.enum';
 
 export interface ITransactionRepository extends IRepository<Transaction> {
   filterTransaction(
+    userId: UUID,
     startDate?: Date,
     endDate?: Date,
     accountIds?: UUID[],

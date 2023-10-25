@@ -21,6 +21,7 @@ export class TransactionRepository
   }
 
   async filterTransaction(
+    userId: UUID,
     startDate?: Date,
     endDate?: Date,
     accountIds?: UUID[],
@@ -29,7 +30,11 @@ export class TransactionRepository
   ): Promise<Transaction[]> {
     const queryBuilder = this.transactionRepo
       .createQueryBuilder('transaction')
+      .leftJoinAndSelect('transaction.account', 'account')
+      .leftJoinAndSelect('transaction.category', 'category')
       .where('1=1'); // Starting with a "true" condition to allow for easy chaining of filters
+
+    queryBuilder.andWhere('account.userId = :userId', { userId });
 
     if (startDate && endDate) {
       queryBuilder.andWhere(

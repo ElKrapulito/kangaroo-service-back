@@ -1,5 +1,5 @@
-import { ICategoryRepository } from './../../../../domain/repositories/icategory.repository';
-import { ICategoryFactory } from './../../../../domain/factories/category/icategory.factory';
+import { ICategoryRepository } from '../../../../../domain/repositories/icategory.repository';
+import { ICategoryFactory } from '../../../../../domain/factories/category/icategory.factory';
 import { CommandHandler, ICommandHandler, EventPublisher } from '@nestjs/cqrs';
 import { CreateCategoryCommand } from '../impl/create-category.command';
 import { Inject } from '@nestjs/common';

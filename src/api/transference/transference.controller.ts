@@ -10,7 +10,7 @@ export class TransferenceController {
     private readonly queryBus: QueryBus,
   ) {}
 
-  @Post('new')
+  @Post()
   async createTransference(@Body() transfer: TransferDto) {
     return await this.commandBus.execute(new CreateTransferCommand(transfer));
   }

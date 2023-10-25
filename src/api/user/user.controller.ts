@@ -12,7 +12,7 @@ export class UserController {
     private readonly queryBus: QueryBus,
   ) {}
 
-  @Post('new')
+  @Post()
   async registerUser(@Body() user: UserDto) {
     return await this.commandBus.execute(new RegisterUserCommand(user));
   }
