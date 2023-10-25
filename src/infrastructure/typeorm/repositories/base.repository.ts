@@ -15,6 +15,9 @@ export abstract class BaseRepositoryTypeOrm<T extends AggregateRoot>
   create(dto: Partial<T>): Promise<T> {
     return this.baseRepo.save(<DeepPartial<T>>dto);
   }
+  save(dto: Partial<T>): Promise<T> {
+    return this.baseRepo.save(<DeepPartial<T>>dto);
+  }
   update(id: UUID, dto: Partial<T>): Promise<T> {
     const newDto = { ...dto, id };
     return this.baseRepo.save(<DeepPartial<T>>newDto);

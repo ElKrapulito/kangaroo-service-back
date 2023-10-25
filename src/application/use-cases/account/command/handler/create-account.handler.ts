@@ -1,5 +1,5 @@
-import { IAccountFactory } from './../../../../domain/factories/account/iaccount.factory';
-import { IAccountRepository } from './../../../../domain/repositories/iaccount.repository';
+import { IAccountFactory } from '../../../../../domain/factories/account/iaccount.factory';
+import { IAccountRepository } from '../../../../../domain/repositories/iaccount.repository';
 import { CommandHandler, ICommandHandler, EventPublisher } from '@nestjs/cqrs';
 import { CreateAccountCommand } from '../impl/create-account.command';
 import { Inject } from '@nestjs/common';

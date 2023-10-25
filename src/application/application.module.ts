@@ -5,10 +5,11 @@ import { CommandHandlers } from './commands';
 import { DomainModule } from 'src/domain/domain.module';
 import { AuthModule } from '../utils/auth/auth.module';
 import { EventHandlers } from './events';
+import { QueryHandlers } from './queries';
 
 @Module({
   imports: [CqrsModule, InfrastructureModule, DomainModule, AuthModule],
-  providers: [...CommandHandlers, ...EventHandlers],
-  exports: [...CommandHandlers, ...EventHandlers],
+  providers: [...CommandHandlers, ...EventHandlers, ...QueryHandlers],
+  exports: [...CommandHandlers, ...EventHandlers, ...QueryHandlers],
 })
 export class ApplicationModule {}

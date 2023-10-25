@@ -5,4 +5,5 @@ export class TransferDto {
   accountBenefited: UUID;
   amount: number;
   category: UUID;
+  date: Date;
 }

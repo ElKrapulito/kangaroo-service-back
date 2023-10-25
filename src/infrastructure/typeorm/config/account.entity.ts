@@ -15,6 +15,6 @@ export class AccountEntity extends AccountAbstract {
   @Column()
   amount: number;
 
-  @ManyToOne(() => UserEntity)
-  user: UserAbstract;
+  @ManyToOne(() => UserEntity, { eager: true })
+  user: UserAbstract | UUID;
 }

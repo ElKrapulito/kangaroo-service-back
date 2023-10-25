@@ -1,7 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
 import { TransactionDto } from '../../application/dto/transaction.dto';
-import { CreateTransactionCommand } from 'src/application/use-cases/transaction/impl/create-transaction.command';
+import { CreateTransactionCommand } from 'src/application/use-cases/transaction/command/impl/create-transaction.command';
 
 @Controller('transaction')
 export class TransactionController {

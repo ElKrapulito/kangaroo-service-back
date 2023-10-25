@@ -27,14 +27,14 @@ export class CreateTransferHandler
     const transactionBenefited = this.transactionFactory.createTransaction(
       transfer.amount,
       transfer.accountBenefited,
-      new Date(),
+      transfer.date,
       TransactionType.Income,
       transfer.category,
     );
     const transactionWithdrown = this.transactionFactory.createTransaction(
       transfer.amount,
       transfer.accountWithdrown,
-      new Date(),
+      transfer.date,
       TransactionType.Withdrawl,
       transfer.category,
     );

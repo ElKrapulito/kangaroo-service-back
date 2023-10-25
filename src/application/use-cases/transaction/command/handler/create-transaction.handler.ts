@@ -19,7 +19,7 @@ export class CreateTransactionHandler
     const newTransaction = this.transactionFactory.createTransaction(
       transaction.amount,
       transaction.account,
-      new Date(),
+      transaction.date,
       transaction.type,
       transaction.category,
     );
@@ -27,6 +27,8 @@ export class CreateTransactionHandler
     const savedTransaction = this.publisher.mergeObjectContext(
       await this.transactionRepository.create(newTransaction),
     );
+
+    savedTransaction.updateAccountAmount();
     savedTransaction.commit();
     return savedTransaction;
   }
